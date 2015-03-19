@@ -5,7 +5,6 @@
  */
 package com.wisnu.cabglass.core;
 
-import com.wisnu.cabglass.sqlite.SQLiteDatabase;
 import java.util.HashMap;
 
 /**
@@ -14,9 +13,6 @@ import java.util.HashMap;
  */
 public abstract class Glass {
 
-    protected static final HashMap<String, Object> GLASS = new HashMap<>();
-    
-    protected static final HashMap<String, SQLiteDatabase> WINEGLASS = new HashMap<>();
-    
-    
+    protected static final HashMap<String, Object> GLASS = new HashMap<>();   
+
 }
