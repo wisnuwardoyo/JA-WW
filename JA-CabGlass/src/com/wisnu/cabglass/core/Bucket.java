@@ -5,7 +5,7 @@
  */
 package com.wisnu.cabglass.core;
 
-import com.wisnu.cabglass.sqlite.SQLiteDatabase;
+import com.wisnu.cabglass.database.Database;
 import java.util.HashMap;
 
 /**
@@ -14,6 +14,6 @@ import java.util.HashMap;
  */
 public abstract class Bucket {
 
-    protected static final HashMap<String, SQLiteDatabase> CHUMBUCKET = new HashMap<>();
+    protected static final HashMap<String, Database> CHUMBUCKET = new HashMap<>();
     
 }

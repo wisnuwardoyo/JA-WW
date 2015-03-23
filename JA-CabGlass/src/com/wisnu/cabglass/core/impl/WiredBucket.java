@@ -6,7 +6,7 @@
 package com.wisnu.cabglass.core.impl;
 
 import com.wisnu.cabglass.core.Bucket;
-import com.wisnu.cabglass.sqlite.SQLiteDatabase;
+import com.wisnu.cabglass.database.Database;
 import java.util.Map;
 import java.util.Set;
 
@@ -26,13 +26,13 @@ public class WiredBucket extends Bucket {
         }
     }
 
-    public static Object register(String key, SQLiteDatabase value) {
+    public static Object register(String key, Database value) {
         synchronized (CHUMBUCKET) {
             return CHUMBUCKET.put(key, value);
         }
     }
 
-    public static void registerAll(Map<? extends String, ? extends SQLiteDatabase> m) {
+    public static void registerAll(Map<? extends String, ? extends Database> m) {
         synchronized (CHUMBUCKET) {
             CHUMBUCKET.putAll(m);
         }
@@ -50,23 +50,23 @@ public class WiredBucket extends Bucket {
         }
     }
 
-    public static boolean containsValue(SQLiteDatabase value) {
+    public static boolean containsValue(Database value) {
         return CHUMBUCKET.containsValue(value);
     }
 
-    public static Set<Map.Entry<String, SQLiteDatabase>> entrySet() {
+    public static Set<Map.Entry<String, Database>> entrySet() {
         synchronized (CHUMBUCKET) {
             return CHUMBUCKET.entrySet();
         }
     }
 
-    public static Object registerIfAbsent(String key, SQLiteDatabase value) {
+    public static Object registerIfAbsent(String key, Database value) {
         synchronized (CHUMBUCKET) {
             return CHUMBUCKET.putIfAbsent(key, value);
         }
     }
 
-    public static Object replace(String key, SQLiteDatabase value) {
+    public static Object replace(String key, Database value) {
         synchronized (CHUMBUCKET) {
             return CHUMBUCKET.replace(key, value);
         }
